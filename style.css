@@ -1,0 +1,240 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .grid-item{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap:18px;
+    border-radius: 12px;
+    transition: all 0.5s;
+  }
+
+  .grid-item:hover{
+    transform: scale(103%);
+    box-shadow: 3px 3px 12px hsl(217, 19%, 35%);
+  }
+
+  .grid-item .small-para{
+    font-size: 20px;
+  }
+
+  .grid-item .quoted-para{
+    font-size: 15px;
+  }
+
+.grid-container .grid-item:nth-child(1) {
+    grid-column: 1 / span 2;
+    background-color:  hsl(263, 55%, 52%);
+    position: relative;
+  }
+
+  .pattern-quotation{
+    position: absolute;
+    top:0;
+    right: 12%;
+    z-index: 0;
+  }
+
+  .grid-container .grid-item:nth-child(2) {
+    grid-column: 3;
+    background-color:  hsl(217, 19%, 35%);
+  }
+
+  .grid-container .grid-item:nth-child(3) {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    background-color: hsl(0, 0%, 100%);
+
+  }
+
+  .grid-container .grid-item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .grid-container .grid-item:nth-child(5) {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    background-color: hsl(219, 29%, 14%);
+  }
+
+.grid-item .person-info{
+    display: flex;
+    width: fit-content;
+    gap: 10px;
+    align-items: center;
+    z-index: 1;
+}
+
+.grid-item .person-info img{
+    border-radius: 100%;
+    width: 40px;
+}
+
+.grid-item .person-info .person-name h1{
+    font-size: 16px;
+}
+
+.grid-item .person-info .person-name h2{
+    font-size: 13px;
+}
+
+.grid-item:nth-child(3) .small-para,
+.grid-item:nth-child(4) .small-para {
+  color:  hsl(217, 19%, 35%);
+}
+
+.grid-item:nth-child(1) .small-para,
+.grid-item:nth-child(2) .small-para,
+.grid-item:nth-child(5) .small-para {
+  color:    hsl(0, 0%, 100%);
+  z-index: 1;
+}
+
+.grid-item:nth-child(3) .quoted-para,
+.grid-item:nth-child(4) .quoted-para {
+  color:  hsla(217, 19%, 35%, 0.5);
+}
+
+.grid-item:nth-child(1) .quoted-para,
+.grid-item:nth-child(2) .quoted-para,
+.grid-item:nth-child(5) .quoted-para {
+  color:  hsla(0, 0%, 100%, 0.5);
+  z-index: 1;
+}
+
+.grid-item:nth-child(3) h1,
+.grid-item:nth-child(4) h1 {
+  color:  hsl(217, 19%, 35%);
+}
+
+.grid-item:nth-child(1) h1,
+.grid-item:nth-child(2) h1,
+.grid-item:nth-child(5) h1 {
+  color:  hsl(0, 0%, 100%);
+  z-index: 1;
+}
+
+.grid-item:nth-child(3) h2,
+.grid-item:nth-child(4) h2 {
+  color:  hsla(217, 19%, 35%, 0.5);
+}
+
+.grid-item:nth-child(1) h2,
+.grid-item:nth-child(2) h2,
+.grid-item:nth-child(5) h2 {
+  color:  hsla(0, 0%, 100%, 0.5);
+  z-index: 1;
+}
+
+.attribution {
+  font-size: 13px; text-align: center;
+  }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  }
+
+/*Media Queries*/
+@media ((min-width:921px) and (max-width:1100px)){
+  .grid-item{
+    padding: 15px;
+    gap:15px;
+  }
+  .grid-item .small-para{
+    font-size: 18px;
+  }
+  .grid-item .quoted-para{
+    font-size: 13px;
+  }
+}
+
+@media ((min-width:769px) and (max-width:920px)){
+  .grid-item{
+    padding: 13px;
+    gap:11px;
+  }
+
+  .grid-item .small-para{
+    font-size: 16px;
+  }
+  .grid-item .quoted-para{
+    font-size: 11px;
+  }
+}
+
+@media (max-width:768px){
+  .grid-container{
+    grid-template-rows: repeat(1fr 0.5fr 0.5fr 0.5fr 1fr);
+    grid-template-columns: 1fr
+  }
+  .grid-container .grid-item:nth-child(1) {
+    grid-column: 1;
+   grid-row: 1;
+  }
+  .grid-container .grid-item:nth-child(2) {
+    grid-column:1;
+    grid-row: 2;
+  }
+  .grid-container .grid-item:nth-child(3) {
+    grid-column:1;
+    grid-row: 5;
+  }
+  .grid-container .grid-item:nth-child(4) {
+    grid-column:1;
+    grid-row: 3;
+  }
+  .grid-container .grid-item:nth-child(5) {
+    grid-column:1;
+    grid-row: 4;
+  }
+  .grid-item{
+    padding: 20px;
+    gap:25px;
+  }
+  .grid-item .small-para{
+    font-size: 20px;
+  }
+  .grid-item .quoted-para{
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
